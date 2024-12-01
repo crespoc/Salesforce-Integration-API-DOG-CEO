@@ -1,0 +1,35 @@
+<template>
+    <div class="dog-select-form">
+        <div class="slds-form-element">
+            <label for="select-breed" class="slds-form-element__label">Select a Breed</label>
+            <div class="slds-form-element__control">
+                <div class="slds-select_container">
+                    <select class="slds-select" id="select-breed" onchange={handleBreedChange}>
+                        <option value="">Select a Breed</option>
+                        <template for:each={breeds} for:item="breed">
+                            <option key={breed.value} value={breed.value}>{breed.label}</option>
+                        </template>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-form-element">
+            <label for="select-subbreed" class="slds-form-element__label">Select a Sub-breed</label>
+            <div class="slds-form-element__control">
+                <div class="slds-select_container">
+                    <select class="slds-select" id="select-subbreed" onchange={handleSubBreedChange}>
+                        <option value="">Select a Sub-breed</option>
+                        <template for:each={subBreeds} for:item="subBreed">
+                            <option key={subBreed.value} value={subBreed.value}>{subBreed.label}</option>
+                        </template>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <button class="slds-button slds-button_neutral get-dogs-btn" onclick={handleGetDogs}>
+            Get Dogs!
+        </button>
+    </div>
+</template>

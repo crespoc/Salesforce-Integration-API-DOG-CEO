@@ -1,0 +1,14 @@
+<template>
+    <figure class="dog" onclick={handleFavoriteClick}>
+        <div class="avatar">
+            <img src={imgPath} alt="" />
+        </div>
+        <figcaption class="caption">
+            {breed}
+        </figcaption>
+        <div class="favorite-action" if:true={isFavorited}>
+            <lightning-icon icon-name="utility:favorite" alternative-text="Favorite" size="x-small">
+            </lightning-icon>
+        </div>
+    </figure>
+</template>

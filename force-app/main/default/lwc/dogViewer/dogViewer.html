@@ -1,0 +1,33 @@
+<template>
+    <div class="slds-card slds-p-around_large">
+        <c-dog-select-form ongetdogs={handleGetDogs}></c-dog-select-form>
+        <lightning-tabset>
+            <lightning-tab label="Dogs!">
+                <div class="dogs">
+                    <template for:each={dogImages} for:item="dog">
+                        <c-dog-card
+                            key={dog.imgPath}
+                            img-path={dog.imgPath}
+                            breed={dog.breed}
+                            is-favorited={dog.isFavorited}
+                            onaddfavorite={handleAddFavorite}
+                        ></c-dog-card>
+                    </template>
+                </div>
+            </lightning-tab>
+            <lightning-tab label="Favorites">
+                <div class="dogs">
+                    <template for:each={favorites} for:item="favorite">
+                        <c-dog-card
+                            key={favorite.Image_URL__c}
+                            img-path={favorite.Image_URL__c}
+                            breed={favorite.Name}
+                            is-favorited={isAlwaysFavorited}
+                            onaddfavorite={handleAddFavorite}
+                        ></c-dog-card>
+                    </template>
+                </div>
+            </lightning-tab>
+        </lightning-tabset>
+    </div>
+</template>

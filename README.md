@@ -1,18 +1,28 @@
-# Salesforce DX Project: Next Steps
+# Dog Viewer App 🐾
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+## Descripción
+Dog Viewer App es una aplicación desarrollada en Salesforce que permite a los amantes de los perros explorar imágenes de diferentes razas, seleccionar sus favoritas y guardarlas en un objeto personalizado en Salesforce. La aplicación está integrada con la [Dog API](https://dog.ceo/dog-api/), lo que permite obtener dinámicamente información sobre razas y subrazas, así como sus imágenes.
 
-## How Do You Plan to Deploy Your Changes?
+## Tecnologías y Componentes Utilizados
+- **Salesforce**:
+  - **Apex Class**: `DogApiService` para realizar las llamadas HTTP a la Dog API y procesar las respuestas.
+  - **Custom Object**: `Dog_Favorite__c` para almacenar las imágenes y los nombres de las razas seleccionadas como favoritas.
+- **Lightning Web Components (LWC)**:
+  - **DogSelectForm**: Formulario para seleccionar una raza y una subraza, y realizar la búsqueda de imágenes.
+  - **DogCard**: Componente que muestra una tarjeta con la imagen de un perro y su raza, y permite marcarla como favorita.
+  - **DogViewer**: Componente principal que organiza la interfaz de usuario, mostrando las imágenes obtenidas y las favoritas.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Características
+1. **Seleccionar Razas y Subrazas**:
+   - Permite al usuario elegir una raza y, si aplica, una subraza para obtener imágenes correspondientes.
+2. **Guardar Favoritos**:
+   - Los usuarios pueden guardar las imágenes que les gustan en el objeto personalizado `Dog_Favorite__c`.
+3. **Gestión de Favoritos**:
+   - Las imágenes favoritas se muestran en una pestaña separada y pueden desmarcarse para eliminarlas de la lista de favoritos.
+4. **Persistencia de Favoritos**:
+   - Los datos de favoritos se almacenan en Salesforce y se conservan incluso después de recargar el navegador.
 
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+## Instrucciones para Implementar
+1. **Clonar el repositorio**:
+   ```bash
+   git clone <URL-DEL-REPOSITORIO>

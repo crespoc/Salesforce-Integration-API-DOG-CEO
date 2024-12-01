@@ -1,18 +1,39 @@
-# Salesforce DX Project: Next Steps
+# Dog Viewer App Salesforce Integration
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+## Description  
+The **Dog Viewer App** is a Salesforce integration project designed for dog enthusiasts to explore dog breeds and sub-breeds, view images of their favorites, and save those images into a custom object in Salesforce. The app leverages Lightning Web Components (LWC) and Apex to fetch data from the Dog API (`https://dog.ceo/api`) and allows users to save their favorite dog pictures for future reference.  
 
-## How Do You Plan to Deploy Your Changes?
+## Apex Classes  
+- **DogApiService**:  
+  Handles API calls to the Dog API to fetch the list of breeds, sub-breeds, and images for a selected breed/sub-breed.  
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Lightning Web Components  
+1. **DogViewer**:  
+   The main component that includes two tabs:  
+   - **Dogs!**: Displays the fetched dog images and allows favoriting.  
+   - **Favorites**: Displays the favorited dog images and allows un-favoriting.  
 
-## Configure Your Salesforce DX Project
+2. **DogSelectForm**:  
+   A form where users can select a breed and sub-breed, then fetch related dog images.  
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+3. **DogCard**:  
+   A card component that displays individual dog images, breed names, and allows users to favorite/unfavorite images.  
 
-## Read All About It
+## Custom Object  
+- **Dog_Favorite__c**:  
+  A custom Salesforce object used to store favorited dog images.  
+  - **Fields**:  
+    - **Name**: Stores the breed name of the dog.  
+    - **Image_URL__c**: Stores the URL of the dog image.  
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+## Features  
+- Fetches a list of dog breeds and sub-breeds from the Dog API.  
+- Displays images of dogs based on user selection.  
+- Allows favoriting and unfavoriting of dog images.  
+- Saved favorites are stored in the `Dog_Favorite__c` custom object.  
+- UI dynamically updates to reflect favorite states without reloading the page.  
+
+## Installation and Setup  
+1. Clone the repository:  
+   ```bash
+   git clone <repository-url>
